@@ -1,0 +1,16 @@
+1. Tests can be executed with npm run car 
+   It is set in package.json under scripts 
+   reports are added there as well 
+2. Under scenarios I created them so each can be run individually
+They worked separately, but if the order is mixed I believe each scenario won't run.
+3. Regarding steps, in create(post) and update(put) I send bodies, and on get and delete 
+functions I set it as undefined as body is not needed. I had this question only wrong on theorectical part 
+as I selected randomly because I was low on time. Additionally I get the car id in create car and se it as global 
+variable so I can use it in other funtions, otherise it is limited to the function it is in.
+Also I tried to use Patch but I got constantly 405 error. I thought it was the header, but I guess 
+the site does not support patch as it is not listed in the documentation there so i commented it and I completed 
+the scenario with PUT
+4. In request I left the function as it is, in short we set baseurl, in headers what kind of format we send and receive, using switch we check which request it is, parametar for endpoint that will be added on base url and send 
+body and headers and what status code we expect
+
+I lost a lot of time with 500 errors on post request and later with patch, so I don't have time for clean up...

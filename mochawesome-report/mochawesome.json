@@ -1,0 +1,353 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 10,
+    "passes": 9,
+    "pending": 1,
+    "failures": 0,
+    "start": "2023-06-10T20:21:09.845Z",
+    "end": "2023-06-10T20:21:12.038Z",
+    "duration": 2193,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 10,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98086926-1990-4867-ac75-7efff1a5f9d9",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Scenarios",
+          "fullTitle": "Scenarios",
+          "timedOut": false,
+          "duration": 1,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "describe('Create car', () => {\n    createCar()\n})\ndescribe(\"Update car\", () => {\n    createCar()\n    updateCar()\n})\ndescribe('Delete car', () => {\n    createCar()\n    deleteCar()\n})\ndescribe('Remove already removed car', () => {\n    createCar()\n    deleteCar()\n    deleteDeletedCar()\n})\ndescribe('Get non existing car', () => {\n    getNonExistingCar()\n})",
+          "err": {},
+          "uuid": "8e3d96ab-b6a2-47d8-8171-4dea2abdd7a0",
+          "parentUUID": "98086926-1990-4867-ac75-7efff1a5f9d9",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "14c10687-87a8-4dbb-9b77-c1def594dbf4",
+          "title": "Create car",
+          "fullFile": "/Users/vilijam/Documents/vilijam_miloshevski_rest_api_final_task/tests/scenarios/car.js",
+          "file": "/tests/scenarios/car.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create car",
+              "fullTitle": "Create car Create car",
+              "timedOut": false,
+              "duration": 248,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const body = {\n    \"brand\": \"BMW\",\n    \"color\": \"Black\",\n    \"fuel\": \"Diesel\",\n    \"gearbox\": \"Manual\"\n}\nconst response = await request('POST', '/car', body, 201)\nexpect(getNestedValue('brand', response.body), 'Checking brand is BMW').to.be.equal('BMW')\nexpect(getNestedValue('color', response.body), 'Checking brand is BMW').to.be.equal('Black')\nexpect(getNestedValue('fuel', response.body), 'Checking brand is BMW').to.be.equal('Diesel')\nexpect(getNestedValue('gearbox', response.body), 'Checking brand is BMW').to.be.equal('Manual')\nglobal.executionVariables = {}\nglobal.executionVariables['carId'] = getNestedValue('_id', response.body)",
+              "err": {},
+              "uuid": "96dcf54b-a1a6-47c7-a116-ddcb78388aee",
+              "parentUUID": "14c10687-87a8-4dbb-9b77-c1def594dbf4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96dcf54b-a1a6-47c7-a116-ddcb78388aee"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 248,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        },
+        {
+          "uuid": "a4be8559-b364-4f75-8c33-9396da7b396e",
+          "title": "Update car",
+          "fullFile": "/Users/vilijam/Documents/vilijam_miloshevski_rest_api_final_task/tests/scenarios/car.js",
+          "file": "/tests/scenarios/car.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create car",
+              "fullTitle": "Update car Create car",
+              "timedOut": false,
+              "duration": 227,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const body = {\n    \"brand\": \"BMW\",\n    \"color\": \"Black\",\n    \"fuel\": \"Diesel\",\n    \"gearbox\": \"Manual\"\n}\nconst response = await request('POST', '/car', body, 201)\nexpect(getNestedValue('brand', response.body), 'Checking brand is BMW').to.be.equal('BMW')\nexpect(getNestedValue('color', response.body), 'Checking brand is BMW').to.be.equal('Black')\nexpect(getNestedValue('fuel', response.body), 'Checking brand is BMW').to.be.equal('Diesel')\nexpect(getNestedValue('gearbox', response.body), 'Checking brand is BMW').to.be.equal('Manual')\nglobal.executionVariables = {}\nglobal.executionVariables['carId'] = getNestedValue('_id', response.body)",
+              "err": {},
+              "uuid": "45ad45fc-769d-4538-a245-ffc05ad04bf4",
+              "parentUUID": "a4be8559-b364-4f75-8c33-9396da7b396e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update car",
+              "fullTitle": "Update car Update car",
+              "timedOut": false,
+              "duration": 244,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const body = {\n    \"brand\": \"Mercedes\",\n    \"color\": \"White\",\n    \"fuel\": \"Hybrid\",\n    \"gearbox\": \"Automatic\"\n}\nconst carId = global.executionVariables['carId']\nconst response = await request('PUT', `/car/${carId}`, body, 200)\nexpect(getNestedValue('brand', response.body), 'Checking brand is BMW').not.to.be.equal('BMW')\nexpect(getNestedValue('color', response.body), 'Checking brand is BMW').not.to.be.equal('Black')\nexpect(getNestedValue('fuel', response.body), 'Checking brand is BMW').not.to.be.equal('Diesel')\nexpect(getNestedValue('gearbox', response.body), 'Checking brand is BMW').not.to.be.equal('Manual')",
+              "err": {},
+              "uuid": "26462478-4c42-4659-966a-7dcf78614070",
+              "parentUUID": "a4be8559-b364-4f75-8c33-9396da7b396e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "45ad45fc-769d-4538-a245-ffc05ad04bf4",
+            "26462478-4c42-4659-966a-7dcf78614070"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 471,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        },
+        {
+          "uuid": "6d8a2131-8068-4d77-b43e-797013d8b241",
+          "title": "Delete car",
+          "fullFile": "/Users/vilijam/Documents/vilijam_miloshevski_rest_api_final_task/tests/scenarios/car.js",
+          "file": "/tests/scenarios/car.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create car",
+              "fullTitle": "Delete car Create car",
+              "timedOut": false,
+              "duration": 498,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const body = {\n    \"brand\": \"BMW\",\n    \"color\": \"Black\",\n    \"fuel\": \"Diesel\",\n    \"gearbox\": \"Manual\"\n}\nconst response = await request('POST', '/car', body, 201)\nexpect(getNestedValue('brand', response.body), 'Checking brand is BMW').to.be.equal('BMW')\nexpect(getNestedValue('color', response.body), 'Checking brand is BMW').to.be.equal('Black')\nexpect(getNestedValue('fuel', response.body), 'Checking brand is BMW').to.be.equal('Diesel')\nexpect(getNestedValue('gearbox', response.body), 'Checking brand is BMW').to.be.equal('Manual')\nglobal.executionVariables = {}\nglobal.executionVariables['carId'] = getNestedValue('_id', response.body)",
+              "err": {},
+              "uuid": "b5a996a9-c845-4b94-a348-c4bca7ffccc3",
+              "parentUUID": "6d8a2131-8068-4d77-b43e-797013d8b241",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete car",
+              "fullTitle": "Delete car Delete car",
+              "timedOut": false,
+              "duration": 232,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const carId = global.executionVariables['carId']\nconst response = await request('DELETE', `/car/${carId}`, undefined, 200)",
+              "err": {},
+              "uuid": "80df6c5b-db15-4bd3-af85-b458603c881f",
+              "parentUUID": "6d8a2131-8068-4d77-b43e-797013d8b241",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b5a996a9-c845-4b94-a348-c4bca7ffccc3",
+            "80df6c5b-db15-4bd3-af85-b458603c881f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 730,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        },
+        {
+          "uuid": "65e7e28e-9496-491f-aedb-b6f26b822791",
+          "title": "Remove already removed car",
+          "fullFile": "/Users/vilijam/Documents/vilijam_miloshevski_rest_api_final_task/tests/scenarios/car.js",
+          "file": "/tests/scenarios/car.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create car",
+              "fullTitle": "Remove already removed car Create car",
+              "timedOut": false,
+              "duration": 224,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const body = {\n    \"brand\": \"BMW\",\n    \"color\": \"Black\",\n    \"fuel\": \"Diesel\",\n    \"gearbox\": \"Manual\"\n}\nconst response = await request('POST', '/car', body, 201)\nexpect(getNestedValue('brand', response.body), 'Checking brand is BMW').to.be.equal('BMW')\nexpect(getNestedValue('color', response.body), 'Checking brand is BMW').to.be.equal('Black')\nexpect(getNestedValue('fuel', response.body), 'Checking brand is BMW').to.be.equal('Diesel')\nexpect(getNestedValue('gearbox', response.body), 'Checking brand is BMW').to.be.equal('Manual')\nglobal.executionVariables = {}\nglobal.executionVariables['carId'] = getNestedValue('_id', response.body)",
+              "err": {},
+              "uuid": "68e917f6-2681-41d3-b1cd-de9d5b183c9b",
+              "parentUUID": "65e7e28e-9496-491f-aedb-b6f26b822791",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete car",
+              "fullTitle": "Remove already removed car Delete car",
+              "timedOut": false,
+              "duration": 264,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const carId = global.executionVariables['carId']\nconst response = await request('DELETE', `/car/${carId}`, undefined, 200)",
+              "err": {},
+              "uuid": "9e512655-e91d-4fc4-9fb2-016091bb269a",
+              "parentUUID": "65e7e28e-9496-491f-aedb-b6f26b822791",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete car",
+              "fullTitle": "Remove already removed car Delete car",
+              "timedOut": false,
+              "duration": 222,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const carId = global.executionVariables['carId']\nconst response = await request('DELETE', `/car/${carId}`, undefined, 404)",
+              "err": {},
+              "uuid": "c980cd47-f682-435d-835c-33393ccb9028",
+              "parentUUID": "65e7e28e-9496-491f-aedb-b6f26b822791",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68e917f6-2681-41d3-b1cd-de9d5b183c9b",
+            "9e512655-e91d-4fc4-9fb2-016091bb269a",
+            "c980cd47-f682-435d-835c-33393ccb9028"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 710,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        },
+        {
+          "uuid": "6e22bedb-13e3-4d5b-9a8c-53e04e5e2e53",
+          "title": "Get non existing car",
+          "fullFile": "/Users/vilijam/Documents/vilijam_miloshevski_rest_api_final_task/tests/scenarios/car.js",
+          "file": "/tests/scenarios/car.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get car non existing car",
+              "fullTitle": "Get non existing car Get car non existing car",
+              "timedOut": false,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8c82da15-e954-4514-9121-0ddf3f597a06",
+              "parentUUID": "6e22bedb-13e3-4d5b-9a8c-53e04e5e2e53",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "8c82da15-e954-4514-9121-0ddf3f597a06"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        }
+      ],
+      "passes": [
+        "8e3d96ab-b6a2-47d8-8171-4dea2abdd7a0"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 1,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 20000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
